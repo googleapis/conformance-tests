@@ -1,0 +1,6 @@
+# Binary output from .NET
+obj
+bin
+
+# Temporary directory created by validate.sh
+tmp
