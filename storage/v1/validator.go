@@ -19,9 +19,10 @@ import (
 	"io/ioutil"
 	"strings"
 	"os"
+	"log"
 
 	"github.com/golang/protobuf/jsonpb"
-	storage_v1_tests "./generated/storage/v1"
+	storage_v1_tests "./generated"
 )
 
 func main() {
@@ -30,22 +31,25 @@ func main() {
 
 	files, err := ioutil.ReadDir(dir)
 	if err != nil {
-		panic(err)
+		log.Fatal(err)
 	}
 
 	for _, f := range files {
-		if !strings.Contains(f.Name(), "tests.json") {
+		if strings.Contains(f.Name(), "not-a-test.json") ||
+				!strings.Contains(f.Name(), ".json") {
 			continue
 		}
 
+		log.Printf("Validating: %v/%v", dir, f.Name())
+
 		inBytes, err := ioutil.ReadFile(dir + "/" + f.Name())
 		if err != nil {
-			panic(err)
+			log.Fatal(err)
 		}
 
 		var testfile storage_v1_tests.TestFile
 		if err := jsonpb.Unmarshal(bytes.NewBuffer(inBytes), &testfile); err != nil {
-			panic(err)
+			log.Fatal(err)
 		}
 	}
 }
