@@ -20,7 +20,8 @@ cd github/conformance-tests
 # Prerequisites:
 # 1. golang compiler must be installed and in PATH.
 # 2. protoc must be installed.
-# 3. Install protoc-gen-go.
+
+# Install protoc-gen-go.
 go get -d -u github.com/golang/protobuf/protoc-gen-go
 go install github.com/golang/protobuf/protoc-gen-go
 
@@ -30,7 +31,7 @@ pushd storage/v1
 # They'll still be compiled.
 rm -rf generated
 mkdir generated
-protoc --go_out=generated test.proto
+protoc -I /go/include -I . --go_out=generated test.proto
 
 go build validator.go
 ./validator .
