@@ -68,11 +68,12 @@
       "method": "GET",
       "expiration": "10",
       "timestamp": "2019-02-01T09:00:00Z",
-      "expectedUrl": "https://storage.googleapis.com/test-bucket/test-object?X-Goog-Algorithm=GOOG4-RSA-SHA256\u0026X-Goog-Credential=test-iam-credentials%40dummy-project-id.iam.gserviceaccount.com%2F20190201%2Fauto%2Fstorage%2Fgoog4_request\u0026X-Goog-Date=20190201T090000Z\u0026X-Goog-Expires=10\u0026X-Goog-SignedHeaders=collapsed%3Bhost%3Bleading%3Btrailing\u0026X-Goog-Signature=1839511d6238d9ac2bbcbba8b23515b3757db35dfa7b8f9bc4b8b4aa270224df747c812526f1a3bcf294d67ed84cd14e074c36bc090e0a542782934a7c925af4a5ea68123e97533704ce8b08ccdf5fe6b412f89c9fc4de243e29abdb098382c5672188ee3f6fef7131413e252c78e7a35658825ad842a50609e9cc463731e17284ff7a14824c989f87cef22fb99dfec20cfeed69d8b3a08f00b43b8284eecd535e50e982b05cd74c5750cd5f986cfc21a2a05f7f3ab7fc31bd684ed1b823b64d29281e923fc6580c49005552ca19c253de087d9d2df881144e44eda40965cfdb4889bf3a35553c9809f4ed20b8355be481b92b9618952b6a04f3017b36053e15",
+      "expectedUrl": "https://storage.googleapis.com/test-bucket/test-object?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=test-iam-credentials%40dummy-project-id.iam.gserviceaccount.com%2F20190201%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20190201T090000Z&X-Goog-Expires=10&X-Goog-SignedHeaders=collapsed%3Bhost%3Bleading%3Btabs%3Btrailing&X-Goog-Signature=52fa1d70bcd527ee9c1241f87c56bc481526e8a63d440948595ff776faacb0caa6e8a3060b113546cb27ed29d80c88d402947d83948758d4e5c49e47d9482751d46b2a99c2dae5bc8f7baffab03dec05b28b5d605610686c48e867d6a4239a2a61a785df7d6099d155bba57d0d331d66d667b5df8e165e8277e2675678fc28499abd34053a2bc4e4fa21d032c4278fd29897e8307f142506a3d8d07149cded15f7defa77028fb88ff45132cee5f6232feb8e7f899fe361f1f8ceed0795aff860084f35e27475447dc6e64e4baa09e96a725eee6fa3c408d6bb51c2bd5f649afb8339f46997d9ef22496a79cf0846e52ac941c08dc4b9d63639d0ff2ce8637412",
       "headers": {
         "collapsed": "abc    def",
         "leading": "    xyz",
-        "trailing": "abc    "
+        "trailing": "abc    ",
+        "tabs": "\tabc\t\t\t\tdef\t"
       }
     },
     {
