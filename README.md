@@ -23,6 +23,6 @@ clients that have conformance tests defined here). These runners must do the
 minimal work to translate a conformance test specified here into a testcase
 that inputs the given input data and asserts based on the given assertion.
 
-Generally, conformance tests are accessed as git submodules in the repositories.
-However, copy-pasting the tests may also be a reasonable approach, though it is
-prone to scalability and maintainability issues.
+Generally, conformance tests are accessed as [git submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules)
+in the repositories. However, copy-pasting the tests may also be a reasonable
+approach, though it is prone to scalability and maintainability issues.
