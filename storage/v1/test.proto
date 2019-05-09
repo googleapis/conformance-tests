@@ -12,17 +12,19 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
- syntax = "proto3";
+syntax = "proto3";
 
- package storage.v1.tests;
+package storage.v1.tests;
 
- import "google/protobuf/timestamp.proto";
+import "google/protobuf/timestamp.proto";
 
- message TestFile {
+option csharp_namespace = "Google.Cloud.Storage.V1.Tests.Conformance";
+
+message TestFile {
   repeated SigningV4Test signing_v4_tests = 1;
 }
 
- message SigningV4Test {
+message SigningV4Test {
   string fileName = 1;
   string description = 2;
   string bucket = 3;
