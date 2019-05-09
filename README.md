@@ -9,8 +9,8 @@ Google APIs Github Organization repositories for language client libraries.
 Conformance tests in these repos generally share these characteristics:
 
 - Tests are specified as a set of inputs and expected outputs, and are defined
-in .json files (ex [here](https://github.com/googleapis/conformance-tests/blob/master/storage/v1/v4_signatures.json)).
-- Test .json files are paired with a .proto (ex [here](https://github.com/googleapis/conformance-tests/blob/master/storage/v1/test.proto))
+in .json files (ex [here](https://github.com/googleapis/conformance-tests/blob/master/storage/v4_signatures.json)).
+- Test .json files are paired with a .proto (ex [here](https://github.com/googleapis/conformance-tests/blob/master/storage/test.proto))
 that defines the specification for the .json file. The .json files are verified
 to match the .proto by a simple validator program that's run in CI.
 
