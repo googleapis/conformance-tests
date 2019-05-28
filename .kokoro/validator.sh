@@ -25,15 +25,53 @@ cd github/conformance-tests
 go get -d -u github.com/golang/protobuf/protoc-gen-go
 go install github.com/golang/protobuf/protoc-gen-go
 
-## Storage ##
-pushd storage/v1
-# Generate Go files in a tmp directory so they're automatically git-ignored.
-# They'll still be compiled.
-rm -rf generated
-mkdir generated
-protoc -I /go/include -I . --go_out=generated test.proto
+function storage() {
+  pushd storage/v1
+  # Generate Go files in a tmp directory so they're automatically git-ignored.
+  # They'll still be compiled.
+  rm -rf generated
+  mkdir generated
+  protoc -I /go/include -I . --go_out=generated test.proto
 
-go build validator.go
-./validator .
-popd
-## End of Storage ##
+  go build validator.go
+  ./validator .
+  popd
+}
+
+
+function firestore() {
+
+  pushd ${TMP:-/tmp}
+  rm -rf googleapis || true
+  # Clone googleapis/googleapis to get the proto files needed by protoc
+  git clone https://github.com/googleapis/googleapis.git
+  popd
+
+  go get google.golang.org/genproto/...
+
+  pushd firestore/v1
+  # Generate Go files in a tmp directory so they're automatically git-ignored.
+  # They'll still be compiled.
+  rm -rf generated
+  mkdir generated
+
+  protoc \
+    -I /go/include \
+    -I /tmp/googleapis \
+    -I proto \
+    --go_out=generated \
+    google/cloud/conformance/firestore/v1/tests.proto
+
+  go build validator.go
+  ./validator testcase
+  popd
+}
+
+function main() {
+
+  storage
+  firestore
+
+}
+
+main
