@@ -25,6 +25,14 @@ cd github/conformance-tests
 go get -d -u github.com/golang/protobuf/protoc-gen-go
 go install github.com/golang/protobuf/protoc-gen-go
 
+# Clone googleapis (head of master) into /tmp so that tests can refer
+# to production protos
+pushd ${TMP:-/tmp}
+rm -rf googleapis || true
+git clone https://github.com/googleapis/googleapis.git --depth 1
+declare -r googleapis=${TMP:-/tmp}/googleapis
+popd
+
 function storage() {
   pushd storage/v1
   # Generate Go files in a tmp directory so they're automatically git-ignored.
@@ -44,11 +52,6 @@ function storage() {
 
 
 function firestore() {
-  pushd ${TMP:-/tmp}
-  rm -rf googleapis || true
-  # Clone googleapis/googleapis to get the proto files needed by protoc
-  git clone https://github.com/googleapis/googleapis.git
-  popd
 
   go get google.golang.org/genproto/...
 
@@ -60,7 +63,7 @@ function firestore() {
 
   protoc \
     -I /go/include \
-    -I /tmp/googleapis \
+    -I $googleapis \
     -I proto \
     --go_out=generated \
     google/cloud/conformance/firestore/v1/tests.proto
@@ -70,9 +73,28 @@ function firestore() {
   popd
 }
 
+function bigtable() {
+  pushd bigtable/v2
+  # Generate Go files in a tmp directory so they're automatically git-ignored.
+  # They'll still be compiled.
+  rm -rf generated
+  mkdir generated
+  protoc \
+    -I /go/include \
+    -I $googleapis \
+    -I proto \
+    --go_out=generated \
+    google/cloud/conformance/bigtable/v2/tests.proto
+
+  go build validator.go
+  ./validator .
+  popd
+}
+
 function main() {
   storage
   firestore
+  bigtable
 }
 
 main
