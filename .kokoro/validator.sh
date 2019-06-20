@@ -40,7 +40,6 @@ function storage() {
 
 
 function firestore() {
-
   pushd ${TMP:-/tmp}
   rm -rf googleapis || true
   # Clone googleapis/googleapis to get the proto files needed by protoc
@@ -68,10 +67,8 @@ function firestore() {
 }
 
 function main() {
-
   storage
   firestore
-
 }
 
 main
