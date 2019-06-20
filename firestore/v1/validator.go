@@ -46,7 +46,7 @@ func main() {
 			log.Fatal(err)
 		}
 
-		var test firestore_v1_tests.Test
+		var test firestore_v1_tests.TestSuite
 		if err := jsonpb.Unmarshal(bytes.NewBuffer(inBytes), &test); err != nil {
 			log.Fatal(err)
 		}
