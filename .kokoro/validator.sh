@@ -66,7 +66,7 @@ function firestore() {
     google/cloud/conformance/firestore/v1/tests.proto
 
   go build validator.go
-  ./validator testcase
+  ./validator .
   popd
 }
 
