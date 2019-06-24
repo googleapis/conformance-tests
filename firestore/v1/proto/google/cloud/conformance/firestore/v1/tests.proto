@@ -31,7 +31,7 @@ import "google/firestore/v1/query.proto";
 import "google/protobuf/timestamp.proto";
 
 // A collection of tests.
-message TestSuite {
+message TestFile {
   repeated Test tests = 1;
 }
 
