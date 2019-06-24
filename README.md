@@ -37,12 +37,12 @@ is no versioning applied to these imports; it's assumed that it's
 always sufficient to take the head of the master branch in
 https://github.com/googleapis/googleapis.
 
-Each API should have a ``TestFile`` message containing repeated fields
+Each API should have a `TestFile` message containing repeated fields
 of specific test types, such as `ReadTest` and `WriteTest`. This
 allows for extensibility as further tests are developed.
 
 Each specific test message should have a `description` field of type
-`string`. When running tests, these can be used as reported test names.
+`string`. When running tests, these should be used as reported test names.
 
 ### JSON conventions
 
