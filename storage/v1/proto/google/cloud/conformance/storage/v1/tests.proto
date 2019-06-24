@@ -14,7 +14,7 @@
 
 syntax = "proto3";
 
-package storage.v1.tests;
+package google.cloud.conformance.storage.v1;
 
 import "google/protobuf/timestamp.proto";
 

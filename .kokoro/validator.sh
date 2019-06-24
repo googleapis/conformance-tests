@@ -31,7 +31,11 @@ function storage() {
   # They'll still be compiled.
   rm -rf generated
   mkdir generated
-  protoc -I /go/include -I . --go_out=generated test.proto
+  protoc \
+    -I /go/include \
+    -I proto \
+    --go_out=generated \
+    google/cloud/conformance/storage/v1/tests.proto
 
   go build validator.go
   ./validator .
