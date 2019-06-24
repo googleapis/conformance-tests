@@ -22,7 +22,7 @@ import (
 	"log"
 
 	"github.com/golang/protobuf/jsonpb"
-	storage_v1_tests "./generated"
+	storage_v1_tests "./generated/google/cloud/conformance/storage/v1"
 )
 
 func main() {
