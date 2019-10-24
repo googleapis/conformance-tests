@@ -57,7 +57,7 @@
       },
       "method": "GET",
       "expiration": "10",
-      "timestamp": "20190201T090000Z",
+      "timestamp": "2019-02-01T09:00:00Z",
       "expectedUrl": "https://storage.googleapis.com/test-bucket/path/with/slashes/under_score/amper%26sand/file.ext?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=test-iam-credentials%40dummy-project-id.iam.gserviceaccount.com%2F20190201%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20190201T090000Z&X-Goog-Expires=10&X-Goog-SignedHeaders=header%3Bhost&X-Goog-Signature=45e8269d303b688ad9e7de67d3050f3b9d03376268e3e6d1d78dbf0fe3d2c495e625029cb73ceb30e6978bbe3d3fb954f277575716de784443607b6d12a21ef25d60948be0b0e291beb21ef8ca96dee61b890616fc7ebcde8ad7d4e6e18cabdad9f136e3c99405cd7b0423d279ecf3870550b918b4291a3cf84e05c0beb5fe6f2aa211269e8977ed3d31480deead52d7e968f0a1957fd1a03bee2c3f4e47c2d21698194fad63695b7a8d2f7fdf210d1e9a934a23b502e615fa48ed399b0af6d4ac72ae095af1f083572740e17308e73ff9df94507860bfb957be1801fff00a0b664d027fa3cd4653c76507a04b66a5296400fa0496972f45f80ac4bd0f214961"
     },
     {
