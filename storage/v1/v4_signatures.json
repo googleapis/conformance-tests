@@ -49,6 +49,18 @@
       "expectedUrl": "https://storage.googleapis.com/test-bucket2/test-object2?X-Goog-Algorithm=GOOG4-RSA-SHA256\u0026X-Goog-Credential=test-iam-credentials%40dummy-project-id.iam.gserviceaccount.com%2F20190201%2Fauto%2Fstorage%2Fgoog4_request\u0026X-Goog-Date=20190201T090000Z\u0026X-Goog-Expires=10\u0026X-Goog-SignedHeaders=host\u0026X-Goog-Signature=36e3d58dfd3ec1d2dd2f24b5ee372a71e811ffaa2162a2b871d26728d0354270bc116face87127532969c4a3967ed05b7309af741e19c7202f3167aa8c2ac420b61417d6451442bb91d7c822cd17be8783f01e05372769c88913561d27e6660dd8259f0081a71f831be6c50283626cbf04494ac10c394b29bb3bce74ab91548f58a37118a452693cf0483d77561fc9cac8f1765d2c724994cca46a83517a10157ee0347a233a2aaeae6e6ab5e204ff8fc5f54f90a3efdb8301d9fff5475d58cd05b181affd657f48203f4fb133c3a3d355b8eefbd10d5a0a5fd70d06e9515460ad74e22334b2cba4b29cae4f6f285cdb92d8f3126d7a1479ca3bdb69c207d860"
     },
     {
+      "description": "Slashes in object name should not be URL encoded",
+      "bucket": "test-bucket",
+      "object": "path/with/slashes/under_score/amper&sand/file.ext",
+      "headers": {
+        "header/name/with/slash": "should-be-encoded"
+      },
+      "method": "GET",
+      "expiration": "10",
+      "timestamp": "2019-02-01T09:00:00Z",
+      "expectedUrl": "https://storage.googleapis.com/test-bucket/path/with/slashes/under_score/amper%26sand/file.ext?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=test-iam-credentials%40dummy-project-id.iam.gserviceaccount.com%2F20190201%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20190201T090000Z&X-Goog-Expires=10&X-Goog-SignedHeaders=header%2Fname%2Fwith%2Fslash%3Bhost&X-Goog-Signature=2a9a82e84e39f5d2c0d980514db17f8c3dece473c9a5743d54e8453f9811927b1b99ce548c534cababd8fa339183e75b410e12e32a4c72f5ff176e95651fabed0072e59e7e236eb7e26f52c0ce599db1c47ae07af1a98d20872b6fde23432c0a5fcf4fb2dda735169198c80cd5cc51be9904f7e5eef2cc489ff44ac5697c529e4b34ac08709a7d2e425619377212c64561ed8b4d2fcb70a26e4f9236f995ab4658d240ac85c7a353bae6b2d39d5fc0716afa435a1f6e100db5504612b5e610db370623ab4b8eba3c03c98f23dcb4b9ffd518f2212abb2f93649d25385d71603d470cff0b7631adb9d0849d38609dedb3097761c8f47ec0d57777bb063611c05b"
+    },
+    {
       "description": "Simple headers",
       "bucket": "test-bucket",
       "object": "test-object",
