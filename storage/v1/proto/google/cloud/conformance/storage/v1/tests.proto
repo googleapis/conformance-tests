@@ -24,6 +24,7 @@ option java_multiple_files = true;
 
 message TestFile {
   repeated SigningV4Test signing_v4_tests = 1;
+  repeated PostPolicyV4Test post_policy_v4_tests = 2;
 }
 
 message SigningV4Test {
@@ -45,4 +46,30 @@ message SigningV4Test {
   }
   UrlStyle urlStyle = 12;
   string bucketBoundDomain = 13;
+}
+
+message PolicyInput {
+  string bucket_name = 1;
+  string object_name = 2;
+  int64 expiration = 3;
+  google.protobuf.Timestamp timestamp = 4;
+  map<string, string> fields = 5;
+  repeated string conditions = 6;
+}
+
+message PolicyOutput {
+  string scheme = 1;
+  string url = 2;
+  string key = 3;
+  string xGoogAlgorithm = 4;
+  string xGoogCredential = 5;
+  string xGoogDate = 6;
+  string xGoogSignature = 7;
+  string policy = 8;
+}
+
+message PostPolicyV4Test {
+  string description = 1;
+  PolicyInput policyInput = 2;
+  PolicyOutput policyOutput = 3;
 }
