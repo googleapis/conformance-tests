@@ -15,7 +15,7 @@
 
 set -e
 
-cd github/conformance-tests
+# cd github/conformance-tests
 
 # Prerequisites:
 # 1. golang compiler must be installed and in PATH.
@@ -93,8 +93,8 @@ function bigtable() {
 
 function main() {
   storage
-  firestore
-  bigtable
+  # firestore
+  # bigtable
 }
 
 main

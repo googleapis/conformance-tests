@@ -49,6 +49,7 @@ message SigningV4Test {
 }
 
 message PolicyInput {
+  string scheme = 1;
   string bucket_name = 1;
   string object_name = 2;
   int64 expiration = 3;
@@ -58,14 +59,13 @@ message PolicyInput {
 }
 
 message PolicyOutput {
-  string scheme = 1;
-  string uri = 2;
-  string key = 3;
-  string xGoogAlgorithm = 4;
-  string xGoogCredential = 5;
-  string xGoogDate = 6;
-  string xGoogSignature = 7;
-  string policy = 8;
+  string url = 1;
+  string key = 2;
+  string xGoogAlgorithm = 3;
+  string xGoogCredential = 4;
+  string xGoogDate = 5;
+  string xGoogSignature = 6;
+  string policy = 7;
 }
 
 message PostPolicyV4Test {
