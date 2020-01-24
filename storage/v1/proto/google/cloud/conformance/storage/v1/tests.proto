@@ -59,7 +59,7 @@ message PolicyInput {
 
 message PolicyOutput {
   string scheme = 1;
-  string url = 2;
+  string uri = 2;
   string key = 3;
   string xGoogAlgorithm = 4;
   string xGoogCredential = 5;
