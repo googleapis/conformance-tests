@@ -256,31 +256,6 @@
       }
     },
     {
-      "description": "POST Policy with content-type",
-      "policyInput": {
-        "scheme": "https",
-        "bucket": "rsaposttest-1579902662-yuhcijnmvulyjq2h",
-        "object": "test-object",
-        "expiration": 10,
-        "timestamp": "2020-01-23T04:35:30Z",
-        "fields": {
-          "contentType": "application/javascript"
-        }
-      },
-      "policyOutput": {
-        "url": "https://storage.googleapis.com/rsaposttest-1579902662-yuhcijnmvulyjq2h/",
-        "fields" : {
-          "Content-Type": "application/javascript",
-          "key": "test-object",
-          "x-goog-algorithm": "GOOG4-RSA-SHA256",
-          "x-goog-credential": "test-iam-credentials@dummy-project-id.iam.gserviceaccount.com/20200123/auto/storage/goog4_request",
-          "x-goog-date": "20200123T043530Z",
-          "x-goog-signature": "3fab82d1454a32cb50d8e1c99348ac7772cfba0c1b7b8967bfe6334045a3be7d1a5b179e4b8f6a87bd878ce87ebc0a9b90f61730bccb86484d902c9ffab54d5afeff7a8cb70e606b0e138c4255b77cd85c3cd4649b2c0fbb8f6d05a0aeabf2ff1358c0e32ff0789951d6b571632f1942a5482524397466c12d771534d63817d4557ce85992725e7348ef76fc42a43b3bf8f21fe0200dcc6bc6998bc5307278ebf9a2049f9e38d7d954b8ca06634de34d006ce84d96a00c09a54045e575306a9d3b8bdd890d8072b7ca25d50126f8dad062d233651da9797d7d41c198d0f2bd3247e8025e231074dc321103c3b1fc57f0535ba6a258c3925b1b154cb16840c0a8",
-          "policy": "eyJjb25kaXRpb25zIjogW3sia2V5IjogInRlc3Qtb2JqZWN0In0sIHsieC1nb29nLWRhdGUiOiAiMjAyMDAxMjNUMDQzNTMwWiJ9LCB7IngtZ29vZy1jcmVkZW50aWFsIjogInRlc3QtaWFtLWNyZWRlbnRpYWxzQGR1bW15LXByb2plY3QtaWQuaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20vMjAyMDAxMjMvYXV0by9nY3MvZ29vZzRfcmVxdWVzdCJ9LCB7IngtZ29vZy1hbGdvcml0aG0iOiAiR09PRzQtUlNBLVNIQTI1NiJ9XSwgImV4cGlyYXRpb24iOiAiMjAyMC0wMS0yM1QwNDozNTo0MFoifQ=="
-        }
-      }
-    },
-    {
       "description": "POST Policy ACL matching",
       "policyInput": {
         "scheme": "https",
@@ -289,17 +264,17 @@
         "expiration": 10,
         "timestamp": "2020-01-23T04:35:30Z",
         "conditions": {
-          "startsWith": {
-            "key": "$acl",
-            "value": "public"
-          }
+          "matches": [
+            {
+              "expression": ["startsWith", "$acl", "public"]
+            }
+          ]
         }
       },
       "policyOutput": {
         "url": "https://storage.googleapis.com/rsaposttest-1579894185-x2kd7kjwh2w5izcw/",
         "fields" : {
           "key": "test-object",
-          "acl": "public",
           "x-goog-algorithm": "GOOG4-RSA-SHA256",
           "x-goog-credential": "test-iam-credentials@dummy-project-id.iam.gserviceaccount.com/20200123/auto/storage/goog4_request",
           "x-goog-date": "20200123T043530Z",
@@ -317,10 +292,11 @@
         "expiration": 10,
         "timestamp": "2020-01-23T04:35:30Z",
         "conditions": {
-          "contentLengthRange": {
-            "start": 246,
-            "end": 266
-          }
+          "matches": [
+            {
+              "expression": ["content-length-range", "246", "266"]
+            }
+          ]
         }
       },
       "policyOutput": {
@@ -336,16 +312,16 @@
       }
     },
     {
-      "description": "POST Policy Cache Control File Header",
+      "description": "POST Policy Cache-Control File Header",
       "policyInput": {
         "scheme": "https",
         "bucket": "rsaposttest-1579902669-nwk5s7vvfjgdjs62",
         "object": "test-object",
         "expiration": 10,
         "timestamp": "2020-01-23T04:35:30Z",
-        "fields": {
+        "conditions": {
           "acl": "public-read",
-          "contentControl": "public,max-age=86400"
+          "cacheControl": "public,max-age=86400"
         }
       },
       "policyOutput": {
@@ -363,7 +339,7 @@
       }
     },
     {
-      "description": "POST Policy Success Status",
+      "description": "POST Policy Success With Status",
       "policyInput": {
         "scheme": "https",
         "bucket": "rsaposttest-1579902678-pt5yms55j47r6qy4",
@@ -378,6 +354,7 @@
         "url": "https://storage.googleapis.com/rsaposttest-1579902678-pt5yms55j47r6qy4/",
         "fields" : {
           "key": "test-object",
+          "success_action_status": "200",
           "x-goog-algorithm": "GOOG4-RSA-SHA256",
           "x-goog-credential": "test-iam-credentials@dummy-project-id.iam.gserviceaccount.com/20200123/auto/storage/goog4_request",
           "x-goog-date": "20200123T043530Z",
@@ -387,7 +364,7 @@
       }
     },
     {
-      "description": "POST Policy With Redirect",
+      "description": "POST Policy Success With Redirect",
       "policyInput": {
         "scheme": "https",
         "bucket": "rsaposttest-1579902671-6ldm6caw4se52vrx",
@@ -402,7 +379,7 @@
         "url": "https://storage.googleapis.com/rsaposttest-1579902671-6ldm6caw4se52vrx/",
         "fields" : {
           "key": "test-object",
-          "success_action_status": "http://www.google.com/",
+          "success_action_redirect": "http://www.google.com/",
           "x-goog-algorithm": "GOOG4-RSA-SHA256",
           "x-goog-credential": "test-iam-credentials@dummy-project-id.iam.gserviceaccount.com/20200123/auto/storage/goog4_request",
           "x-goog-date": "20200123T043530Z",

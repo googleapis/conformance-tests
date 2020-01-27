@@ -48,31 +48,31 @@ message SigningV4Test {
   string bucketBoundDomain = 13;
 }
 
-message ContentLengthRange {
-  int64 start;
-  int64 end;
-}
-
-message StartsWith {
-  string key = 1;
-  string value = 2;
+message MatchExpression {
+  repeated string expression = 1;
 }
 
 message PolicyCondition {
-  string successActionRedirect = 1;
-  int64 successActionStatus = 2;
-  ContentLengthRange contentLengthRange = 3;
-  StartsWith startsWith = 4;
+  string acl = 1;
+  string cacheControl = 2;
+  string cacheDisposition = 3;
+  string contentEncoding = 4;
+  string contentType = 5;
+  string expires = 6;
+  int64 contentLength = 7;
+  int64 successActionStatus = 8;
+  string successActionRedirect = 9;
+  repeated MatchExpression matches = 10;
 }
 
 message PolicyInput {
   string scheme = 1;
-  string bucket = 1;
-  string object = 2;
-  int64 expiration = 3;
-  google.protobuf.Timestamp timestamp = 4;
-  map<string, string> fields = 5;
-  PolicyCondition conditions = 6;
+  string bucket = 2;
+  string object = 3;
+  int64 expiration = 4;
+  google.protobuf.Timestamp timestamp = 5;
+  map<string, string> fields = 6;
+  PolicyCondition conditions = 7;
 }
 
 message PolicyOutput {
