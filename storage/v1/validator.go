@@ -48,6 +48,7 @@ func main() {
 		}
 
 		var testfile storage_v1_tests.TestFile
+
 		if err := jsonpb.Unmarshal(bytes.NewBuffer(inBytes), &testfile); err != nil {
 			log.Fatal(err)
 		}
