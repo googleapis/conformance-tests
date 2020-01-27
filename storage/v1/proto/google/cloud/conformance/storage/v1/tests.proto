@@ -48,21 +48,14 @@ message SigningV4Test {
   string bucketBoundDomain = 13;
 }
 
-message MatchExpression {
+message ConditionalMatches {
   repeated string expression = 1;
 }
 
-message PolicyCondition {
-  string acl = 1;
-  string cacheControl = 2;
-  string cacheDisposition = 3;
-  string contentEncoding = 4;
-  string contentType = 5;
-  string expires = 6;
-  int64 contentLength = 7;
-  int64 successActionStatus = 8;
-  string successActionRedirect = 9;
-  repeated MatchExpression matches = 10;
+message PolicyConditions {
+  string successActionStatus = 1;
+  string successActionRedirect = 2;
+  repeated ConditionalMatches matches = 3;
 }
 
 message PolicyInput {
@@ -71,14 +64,15 @@ message PolicyInput {
   string object = 3;
   int64 expiration = 4;
   google.protobuf.Timestamp timestamp = 5;
-  map<string, string> fields = 6;
-  PolicyCondition conditions = 7;
+  map<string, string> headers = 6;
+  PolicyConditions conditions = 7;
 }
 
 message PolicyOutput {
   string url = 1;
   string key = 2;
   map<string, string> fields = 3;
+  string decodedPolicyForValidation = 4;
 }
 
 message PostPolicyV4Test {

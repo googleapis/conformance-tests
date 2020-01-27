@@ -252,7 +252,8 @@
           "x-goog-date": "20200123T043530Z",
           "x-goog-signature": "925766caea79216580bff38d89b14f7f5b45719f54a87224b39b21592f60cad3aa1ec42b3e39b01c8a14420133a029fe5f32b4e925b1acd9c5e24aadaea70f9dddeb75dd14cf5ca7464e5bcffac576d2645f558f086e0c9b6ba67bdc0cc3e7543b1aa08aa491549a6f6d7b303b39751cab7edb5222f5f9a11a961442030475fc1485df631a97c81958b252c37dbcf2bb2bfb6ecd589d46a0fe4298f4f1f0c5b23b1b8ae57c0f522a786d508c5311270552f27b8940917ba3f1b8004e1f4c80340de3de859ebd795ee7ca5bf382c29c5fa9e47f2de915fdc0dcfdb764dca33943062316bb3fe4c13615c10cfb107daa92fa49187552c918c6fd6aa3a272f0d9fb",
           "policy": "eyJjb25kaXRpb25zIjogW3sia2V5IjogInRlc3Qtb2JqZWN0In0sIHsieC1nb29nLWRhdGUiOiAiMjAyMDAxMjNUMDQzNTMwWiJ9LCB7IngtZ29vZy1jcmVkZW50aWFsIjogInRlc3QtaWFtLWNyZWRlbnRpYWxzQGR1bW15LXByb2plY3QtaWQuaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20vMjAyMDAxMjMvYXV0by9zdG9yYWdlL2dvb2c0X3JlcXVlc3QifSwgeyJ4LWdvb2ctYWxnb3JpdGhtIjogIkdPT0c0LVJTQS1TSEEyNTYifV0sICJleHBpcmF0aW9uIjogIjIwMjAtMDEtMjNUMDQ6MzU6NDBaIn0="
-        }
+        },
+        "decodedPolicyForValidation": "{\"conditions\": [{\"key\": \"test-object\"}, {\"x-goog-date\": \"20200123T043530Z\"}, {\"x-goog-credential\": \"test-iam-credentials@dummy-project-id.iam.gserviceaccount.com/20200123/auto/storage/goog4_request\"}, {\"x-goog-algorithm\": \"GOOG4-RSA-SHA256\"}], \"expiration\": \"2020-01-23T04:35:40Z\"}"
       }
     },
     {
@@ -264,11 +265,9 @@
         "expiration": 10,
         "timestamp": "2020-01-23T04:35:30Z",
         "conditions": {
-          "matches": [
-            {
-              "expression": ["startsWith", "$acl", "public"]
-            }
-          ]
+          "matches": [{
+            "expression": ["startsWith", "$acl", "public"]
+          }]
         }
       },
       "policyOutput": {
@@ -280,7 +279,8 @@
           "x-goog-date": "20200123T043530Z",
           "x-goog-signature": "18a7d82b377ff1a09849824eb6d4666f4face04f5b9e557811173a954c87b573f24c58cc0e06f8f6d964a1fc63a62ce2137d1e08de98401070c0742d388c6079814d728e3e3ccff81e748c24f109736781b32d1e6da2457348d37bad61609f1cb4206274c5901f59db408821d9e27b44a977c0bd21f66e5b79de9991d354e4c1c49e2dd8a0b8535e320bf45dc1b4f3b7ca30638091e62fb70b5bbedd14c4d56ba0486650d35f454aa89654310f238f55d4834c9c1db2e48ca1ac2b353d6a4324d5bd54093d6f7b09fa372cf68923ab0dd13caff04c53d1d31140bf4842cc87529b984f67215423c05a1036baa3226b472902d67373cbc359794e6b98dd2e5ad7",
           "policy": "eyJjb25kaXRpb25zIjogW3sia2V5IjogInRlc3Qtb2JqZWN0In0sIHsieC1nb29nLWRhdGUiOiAiMjAyMDAxMjNUMDQzNTMwWiJ9LCB7IngtZ29vZy1jcmVkZW50aWFsIjogInRlc3QtaWFtLWNyZWRlbnRpYWxzQGR1bW15LXByb2plY3QtaWQuaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20vMjAyMDAxMjMvYXV0by9nY3MvZ29vZzRfcmVxdWVzdCJ9LCB7IngtZ29vZy1hbGdvcml0aG0iOiAiR09PRzQtUlNBLVNIQTI1NiJ9XSwgImV4cGlyYXRpb24iOiAiMjAyMC0wMS0yM1QwNDozNTo0MFoifQ=="
-        }
+        },
+        "decodedPolicyForValidation": "{\"conditions\": [{\"key\": \"test-object\"}, {\"x-goog-date\": \"20200123T043530Z\"}, {\"x-goog-credential\": \"test-iam-credentials@dummy-project-id.iam.gserviceaccount.com/20200123/auto/gcs/goog4_request\"}, {\"x-goog-algorithm\": \"GOOG4-RSA-SHA256\"}], \"expiration\": \"2020-01-23T04:35:40Z\"}"
       }
     },
     {
@@ -292,11 +292,9 @@
         "expiration": 10,
         "timestamp": "2020-01-23T04:35:30Z",
         "conditions": {
-          "matches": [
-            {
-              "expression": ["content-length-range", "246", "266"]
-            }
-          ]
+          "matches": [{
+            "expression": ["content-length-range", "246", "266"]
+          }]
         }
       },
       "policyOutput": {
@@ -308,7 +306,8 @@
           "x-goog-date": "20200123T043530Z",
           "x-goog-signature": "8cfa9dc9a8d35f597f6f7bbf749322b3883cb221e907d1b3fc511333421c8f666649a35add399547faa327da07a13025987f64194ede8ee8687ace756d72e8841ed7b08a7335afad12252b1aafe9a84cd72932a76074781264d645886e28b7095e70d5a6814e4fcaa2192080d50c361057b0127a9c1f072c55636d030f1d3ecc5273f5d70a84981ec81499dc4cd07e516b6739811ac578b1cc2de459598c42ba640089bd0ec68d498674757f8e044ecc902eb522b60af5b4999ff028800905c0a7b4e35e7552027ac1f059c50c492b2633908010c95d24cf5f5354073d36c7b2fb74d1b961605e7aa011f07a3f48b680f9c3a3fb7034c3c02034f4a1bbbc7433",
           "policy": "eyJjb25kaXRpb25zIjogW1siY29udGVudC1sZW5ndGgtcmFuZ2UiLCAyNDYsIDI2Nl0sIHsia2V5IjogInRlc3Qtb2JqZWN0In0sIHsieC1nb29nLWRhdGUiOiAiMjAyMDAxMjNUMDQzNTMwWiJ9LCB7IngtZ29vZy1jcmVkZW50aWFsIjogInRlc3QtaWFtLWNyZWRlbnRpYWxzQGR1bW15LXByb2plY3QtaWQuaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20vMjAyMDAxMjMvYXV0by9zdG9yYWdlL2dvb2c0X3JlcXVlc3QifSwgeyJ4LWdvb2ctYWxnb3JpdGhtIjogIkdPT0c0LVJTQS1TSEEyNTYifV0sICJleHBpcmF0aW9uIjogIjIwMjAtMDEtMjNUMDQ6MzU6NDBaIn0="
-        }
+        },
+        "decodedPolicyForValidation": "{\"conditions\": [[\"content-length-range\", 246, 266], {\"key\": \"test-object\"}, {\"x-goog-date\": \"20200123T043530Z\"}, {\"x-goog-credential\": \"test-iam-credentials@dummy-project-id.iam.gserviceaccount.com/20200123/auto/storage/goog4_request\"}, {\"x-goog-algorithm\": \"GOOG4-RSA-SHA256\"}], \"expiration\": \"2020-01-23T04:35:40Z\"}"
       }
     },
     {
@@ -319,14 +318,14 @@
         "object": "test-object",
         "expiration": 10,
         "timestamp": "2020-01-23T04:35:30Z",
-        "conditions": {
+        "headers": {
           "acl": "public-read",
-          "cacheControl": "public,max-age=86400"
+          "cache-control": "public,max-age=86400"
         }
       },
       "policyOutput": {
         "url": "https://storage.googleapis.com/rsaposttest-1579902669-nwk5s7vvfjgdjs62/",
-        "fields" : {
+        "fields": {
           "key": "test-object",
           "acl": "public-read",
           "cache-control": "public,max-age=86400",
@@ -335,7 +334,8 @@
           "x-goog-date": "20200123T043530Z",
           "x-goog-signature": "0b427e08c1f5688354b60b82679fec4f7eaf9f13cc06afcb8d4231fd46e96f2090d219e196acf8564d10ee89adc77572a26b4ade961894587972cb1c364aaac00748675a010be9245fb92c11ce6aead8b4fdb3d93f18d6886489f086735863978c6405d945ec6ae8986863a77dd6c4d0d7840bed0f108f3965d3dc18102e65995276f71bcb5c6b1590f488226cce62fa47de0cd7cbf8ce09efb58b052ce6f02e92c86a942cab37435eab6560ce5f870ecaf7045401167e884999e268a97a5d0a700df97a1d986d28db47ab1f926198df82bdec6d2bd54f41fe162c91f606f0c628ae8e8425622e4147b8b04582e6b0e0cf5fad501644540b57e283a692a8441f",
           "policy": "eyJjb25kaXRpb25zIjogW3siYWNsIjogInB1YmxpYy1yZWFkIn0sIHsiY2FjaGUtY29udHJvbCI6ICJwdWJsaWMsbWF4LWFnZT04NjQwMCJ9LCB7ImtleSI6ICJ0ZXN0LW9iamVjdCJ9LCB7IngtZ29vZy1kYXRlIjogIjIwMjAwMTIzVDA0MzUzMFoifSwgeyJ4LWdvb2ctY3JlZGVudGlhbCI6ICJ0ZXN0LWlhbS1jcmVkZW50aWFsc0BkdW1teS1wcm9qZWN0LWlkLmlhbS5nc2VydmljZWFjY291bnQuY29tLzIwMjAwMTIzL2F1dG8vc3RvcmFnZS9nb29nNF9yZXF1ZXN0In0sIHsieC1nb29nLWFsZ29yaXRobSI6ICJHT09HNC1SU0EtU0hBMjU2In1dLCAiZXhwaXJhdGlvbiI6ICIyMDIwLTAxLTIzVDA0OjM1OjQwWiJ9="
-        }
+        },
+        "decodedPolicyForValidation": "{\"conditions\": [{\"acl\": \"public-read\"}, {\"cache-control\": \"public,max-age=86400\"}, {\"key\": \"test-object\"}, {\"x-goog-date\": \"20200123T043530Z\"}, {\"x-goog-credential\": \"test-iam-credentials@dummy-project-id.iam.gserviceaccount.com/20200123/auto/storage/goog4_request\"}, {\"x-goog-algorithm\": \"GOOG4-RSA-SHA256\"}], \"expiration\": \"2020-01-23T04:35:40Z\"}"
       }
     },
     {
@@ -347,12 +347,12 @@
         "expiration": 10,
         "timestamp": "2020-01-23T04:35:30Z",
         "conditions": {
-          "successActionStatus": 200
+          "successActionStatus": "200"
         }
       },
       "policyOutput": {
         "url": "https://storage.googleapis.com/rsaposttest-1579902678-pt5yms55j47r6qy4/",
-        "fields" : {
+        "fields": {
           "key": "test-object",
           "success_action_status": "200",
           "x-goog-algorithm": "GOOG4-RSA-SHA256",
@@ -360,7 +360,8 @@
           "x-goog-date": "20200123T043530Z",
           "x-goog-signature": "64d92b33d9c44664ed7a16c8505f807d54cab46203e595b9885e298c44e598aa03d60a0a13b63746f064d29f803d2c6852856822dae04f20a645257c9445b98af03d73621d7d18097d7c64e0c37142546a5aa2754432118b7d1d5f1dbd9ca4407a0b991c2a0874bc4b8e0ac2a2c92d3ad1679f47af1c211ca73219047598e95a87e95dacb2ef8c3c33a3de61b23e34c76623844f688ad862cb8639f4213817baf35acb4f8a7b687d687721c356522e4c4995db07c571f6605d2aaea02722f5c38ef6e130f87b9790d3117374a8aa205592d5dda5ab676bab4b83191f81eb24d86e8d147080040dcaa46f9e1a9385cae58bda2e70abd6d82bfc24ff5589633436",
           "policy": "eyJjb25kaXRpb25zIjogW3sic3VjY2Vzc19hY3Rpb25fc3RhdHVzIjogIjIwMCJ9LCB7ImtleSI6ICJ0ZXN0LW9iamVjdCJ9LCB7IngtZ29vZy1kYXRlIjogIjIwMjAwMTIzVDA0MzUzMFoifSwgeyJ4LWdvb2ctY3JlZGVudGlhbCI6ICJ0ZXN0LWlhbS1jcmVkZW50aWFsc0BkdW1teS1wcm9qZWN0LWlkLmlhbS5nc2VydmljZWFjY291bnQuY29tLzIwMjAwMTIzL2F1dG8vc3RvcmFnZS9nb29nNF9yZXF1ZXN0In0sIHsieC1nb29nLWFsZ29yaXRobSI6ICJHT09HNC1SU0EtU0hBMjU2In1dLCAiZXhwaXJhdGlvbiI6ICIyMDIwLTAxLTIzVDA0OjM1OjQwWiJ9"
-        }
+        },
+        "decodedPolicyForValidation": "{\"conditions\": [{\"success_action_status\": \"200\"}, {\"key\": \"test-object\"}, {\"x-goog-date\": \"20200123T043530Z\"}, {\"x-goog-credential\": \"test-iam-credentials@dummy-project-id.iam.gserviceaccount.com/20200123/auto/storage/goog4_request\"}, {\"x-goog-algorithm\": \"GOOG4-RSA-SHA256\"}], \"expiration\": \"2020-01-23T04:35:40Z\"}"
       }
     },
     {
@@ -385,7 +386,8 @@
           "x-goog-date": "20200123T043530Z",
           "x-goog-signature": "88cac749907f9d8e8a8d8a3d09acc349663f12c59ddec7294fe8bbff8437cd2632856f2ff1479fb0f2ce92484a15dc5bd20a2c19d142ecf0641814d96f12ebb4ba4b0d1f1f7e8881bcf2fb5d7823c0fc3a132f4e7793ce27316ed75a985e1b6183a087b887970214abfd5b6d6ea1f6fc1ccf86bb376cb0f8b5053a0962b528ec018115195b9b5e054cf6773ee72113cf41daa258f2a3a16c2d3b49e256a5655c1ea07ed0a358d167f31be41db476fe51483dbbc1fc188aca718a791a7bb8ee4177ddbee3a213d093e4ae088db335caace173c504ffd4e0bea23b1cfeeb1c5181b9b74115b63fd290cce40735ee05f20ad2c799ce94fd4458429d57a2654be1e9",
           "policy": "eyJjb25kaXRpb25zIjogW3sic3VjY2Vzc19hY3Rpb25fcmVkaXJlY3QiOiAiaHR0cDovL3d3dy5nb29nbGUuY29tLyJ9LCB7ImtleSI6ICJ0ZXN0LW9iamVjdCJ9LCB7IngtZ29vZy1kYXRlIjogIjIwMjAwMTIzVDA0MzUzMFoifSwgeyJ4LWdvb2ctY3JlZGVudGlhbCI6ICJ0ZXN0LWlhbS1jcmVkZW50aWFsc0BkdW1teS1wcm9qZWN0LWlkLmlhbS5nc2VydmljZWFjY291bnQuY29tLzIwMjAwMTIzL2F1dG8vc3RvcmFnZS9nb29nNF9yZXF1ZXN0In0sIHsieC1nb29nLWFsZ29yaXRobSI6ICJHT09HNC1SU0EtU0hBMjU2In1dLCAiZXhwaXJhdGlvbiI6ICIyMDIwLTAxLTIzVDA0OjM1OjQwWiJ9"
-        }
+        },
+        "decodedPolicyForValidation": "{\"conditions\": [{\"success_action_redirect\": \"http://www.google.com/\"}, {\"key\": \"test-object\"}, {\"x-goog-date\": \"20200123T043530Z\"}, {\"x-goog-credential\": \"test-iam-credentials@dummy-project-id.iam.gserviceaccount.com/20200123/auto/storage/goog4_request\"}, {\"x-goog-algorithm\": \"GOOG4-RSA-SHA256\"}], \"expiration\": \"2020-01-23T04:35:40Z\"}"
       }
     }
   ]
