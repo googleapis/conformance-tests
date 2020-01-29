@@ -45,6 +45,6 @@ message SigningV4Test {
   }
   UrlStyle urlStyle = 12;
   string bucketBoundDomain = 13;
-  string canonicalRequest = 14;
-  string stringToSign = 15;
+  string expectedCanonicalRequest = 14;
+  string expectedStringToSign = 15;
 }
