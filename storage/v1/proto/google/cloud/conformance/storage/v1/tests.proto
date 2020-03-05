@@ -30,7 +30,7 @@ message TestFile {
 enum UrlStyle {
   PATH_STYLE = 0;
   VIRTUAL_HOSTED_STYLE = 1;
-  BUCKET_BOUND_DOMAIN = 2;
+  BUCKET_BOUND_HOSTNAME = 2;
 }
 
 message SigningV4Test {
@@ -46,7 +46,7 @@ message SigningV4Test {
   map<string, string> query_parameters = 10;
   string scheme = 11;
   UrlStyle urlStyle = 12;
-  string bucketBoundDomain = 13;
+  string bucketBoundHostname = 13;
   string expectedCanonicalRequest = 14;
   string expectedStringToSign = 15;
 }

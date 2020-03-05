@@ -243,7 +243,7 @@
       "expectedStringToSign": "GOOG4-RSA-SHA256\n20190201T090000Z\n20190201/auto/storage/goog4_request\n89eeae48258eccdcb1f592fb908008e3f5d36a949c002c1e614c94356dc18fc6"
     },
     {
-      "description": "HTTP Bucket Bound Domain Support",
+      "description": "HTTP Bucket Bound Hostname Support",
       "bucket": "test-bucket",
       "object": "test-object",
       "method": "GET",
@@ -251,13 +251,13 @@
       "timestamp": "2019-02-01T09:00:00Z",
       "expectedUrl": "http://mydomain.tld/test-object?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=test-iam-credentials%40dummy-project-id.iam.gserviceaccount.com%2F20190201%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20190201T090000Z&X-Goog-Expires=10&X-Goog-SignedHeaders=host&X-Goog-Signature=7115a77f8c7ed1a8b74bca8b520904fca7f3bab90d69ea052687a94efd9b3a4e2a7fb7135d40e295e0a21958194c55da7e106227957c22ed6edc9d8b3d2a8133bc8af84fc9695dda8081d53f0db5ea9f28e5bfc225d78f873e9f571fd287bb7a95330e726aebd8eb4623cdb0b1a7ceb210b2ce1351b6be0191c2ad7b38f7ceb6c5ce2f98dbfb5a5a649050585e46e97f72f1f5407de657a56e34a3fdc80cdaa0598bd47f3e8af5ff22d0916b19b106890bff8c3f6587f1d3b076b16cd0ba0508607a672be33b9c75d537e15258450b43d22a21c4d528090acbb8e5bae7b31fc394e61394106ef1d6a8ed43074ab05bcec65674cd8113fb3de388da4d97e62f56",
       "scheme": "http",
-      "urlStyle": "BUCKET_BOUND_DOMAIN",
-      "bucketBoundDomain": "mydomain.tld",
+      "urlStyle": "BUCKET_BOUND_HOSTNAME",
+      "bucketBoundHostname": "mydomain.tld",
       "expectedCanonicalRequest": "GET\n/test-object\nX-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=test-iam-credentials%40dummy-project-id.iam.gserviceaccount.com%2F20190201%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20190201T090000Z&X-Goog-Expires=10&X-Goog-SignedHeaders=host\nhost:mydomain.tld\n\nhost\nUNSIGNED-PAYLOAD",
       "expectedStringToSign": "GOOG4-RSA-SHA256\n20190201T090000Z\n20190201/auto/storage/goog4_request\nd6c309924b51a5abbe4d6356f7bf29c2120c6b14649b1e97b3bc9309adca7d4b"
     },
     {
-      "description": "HTTPS Bucket Bound Domain Support",
+      "description": "HTTPS Bucket Bound Hostname Support",
       "bucket": "test-bucket",
       "object": "test-object",
       "method": "GET",
@@ -265,8 +265,8 @@
       "timestamp": "2019-02-01T09:00:00Z",
       "expectedUrl": "https://mydomain.tld/test-object?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=test-iam-credentials%40dummy-project-id.iam.gserviceaccount.com%2F20190201%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20190201T090000Z&X-Goog-Expires=10&X-Goog-SignedHeaders=host&X-Goog-Signature=7115a77f8c7ed1a8b74bca8b520904fca7f3bab90d69ea052687a94efd9b3a4e2a7fb7135d40e295e0a21958194c55da7e106227957c22ed6edc9d8b3d2a8133bc8af84fc9695dda8081d53f0db5ea9f28e5bfc225d78f873e9f571fd287bb7a95330e726aebd8eb4623cdb0b1a7ceb210b2ce1351b6be0191c2ad7b38f7ceb6c5ce2f98dbfb5a5a649050585e46e97f72f1f5407de657a56e34a3fdc80cdaa0598bd47f3e8af5ff22d0916b19b106890bff8c3f6587f1d3b076b16cd0ba0508607a672be33b9c75d537e15258450b43d22a21c4d528090acbb8e5bae7b31fc394e61394106ef1d6a8ed43074ab05bcec65674cd8113fb3de388da4d97e62f56",
       "scheme": "https",
-      "urlStyle": "BUCKET_BOUND_DOMAIN",
-      "bucketBoundDomain": "mydomain.tld",
+      "urlStyle": "BUCKET_BOUND_HOSTNAME",
+      "bucketBoundHostname": "mydomain.tld",
       "expectedCanonicalRequest": "GET\n/test-object\nX-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=test-iam-credentials%40dummy-project-id.iam.gserviceaccount.com%2F20190201%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20190201T090000Z&X-Goog-Expires=10&X-Goog-SignedHeaders=host\nhost:mydomain.tld\n\nhost\nUNSIGNED-PAYLOAD",
       "expectedStringToSign": "GOOG4-RSA-SHA256\n20190201T090000Z\n20190201/auto/storage/goog4_request\nd6c309924b51a5abbe4d6356f7bf29c2120c6b14649b1e97b3bc9309adca7d4b"
     }
@@ -318,11 +318,11 @@
       }
     },
     {
-      "description": "POST Policy Simple Bucket Bound Domain",
+      "description": "POST Policy Simple Bucket Bound Hostname",
       "policyInput": {
         "scheme": "https",
-        "urlStyle": "BUCKET_BOUND_DOMAIN",
-        "bucketBoundDomain": "mydomain.tld",
+        "urlStyle": "BUCKET_BOUND_HOSTNAME",
+        "bucketBoundHostname": "mydomain.tld",
         "bucket": "rsaposttest-1579902670-h3q7wvodjor6bc7y",
         "object": "test-object",
         "expiration": 10,
@@ -342,11 +342,11 @@
       }
     },
     {
-      "description": "POST Policy Simple Bucket Bound Domain HTTP",
+      "description": "POST Policy Simple Bucket Bound Hostname HTTP",
       "policyInput": {
         "scheme": "http",
-        "urlStyle": "BUCKET_BOUND_DOMAIN",
-        "bucketBoundDomain": "mydomain.tld",
+        "urlStyle": "BUCKET_BOUND_HOSTNAME",
+        "bucketBoundHostname": "mydomain.tld",
         "bucket": "rsaposttest-1579902670-h3q7wvodjor6bc7y",
         "object": "test-object",
         "expiration": 10,
