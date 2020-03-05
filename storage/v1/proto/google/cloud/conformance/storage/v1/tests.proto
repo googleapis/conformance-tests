@@ -63,7 +63,7 @@ message PolicyConditions {
 message PolicyInput {
   string scheme = 1;
   UrlStyle urlStyle = 2;
-  string bucketBoundDomain = 3;
+  string bucketBoundHostname = 3;
   string bucket = 4;
   string object = 5;
   int32 expiration = 6;
