@@ -511,12 +511,13 @@
       "policyOutput": {
         "url": "https://storage.googleapis.com/rsaposttest-1579902671-6ldm6caw4se52vrx/",
         "fields" : {
-          "key": "test-object",
+          "key": "$test-object-é",
           "success_action_redirect": "http://www.google.com/",
           "x-goog-algorithm": "GOOG4-RSA-SHA256",
           "x-goog-credential": "test-iam-credentials@dummy-project-id.iam.gserviceaccount.com/20200123/auto/storage/goog4_request",
           "x-goog-date": "20200123T043530Z",
           "x-goog-signature": "6a8642ff294c9af86492a27bb0fd4604fe23101bb94631b241fad39b1f2be63038e3c4a558c412a11ccf40d99831becb0aab37c7a3b8bd0413cc17a26394d6dd8bae384fe00daec770927f47a8a0ed0b7c924e53c16d686971e30666d88a195879433096ae1fb248129c6a165b028c4697085d1eb3a402ffb543df5572a3a616fee19799d90123646228ee2e72a4754297e7af1f8b08f39ac55d8544775a621c9e5e7d6aaa8803b616627b2a6b81cb0167eaf6080fcb2dc3f46df98f6a333edfcb1fa0af09da7d2947d869742187c7bfafd074486b89924129125f48052d2dd0996d33da20a883a77a2c908ba883a641fec7410d50236a14672792a1ab586dc1",
+          "x-goog-meta": "$test-object-é-metadata",
           "policy": "eyJjb25kaXRpb25zIjpbeyJzdWNjZXNzX2FjdGlvbl9yZWRpcmVjdCI6Imh0dHA6Ly93d3cuZ29vZ2xlLmNvbS8ifSx7ImtleSI6IlxcJHRlc3Qtb2JqZWN0LVx1MDBlOSJ9LHsieC1nb29nLWRhdGUiOiIyMDIwMDEyM1QwNDM1MzBaIn0seyJ4LWdvb2ctY3JlZGVudGlhbCI6InRlc3QtaWFtLWNyZWRlbnRpYWxzQGR1bW15LXByb2plY3QtaWQuaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20vMjAyMDAxMjMvYXV0by9zdG9yYWdlL2dvb2c0X3JlcXVlc3QifSx7IngtZ29vZy1hbGdvcml0aG0iOiJHT09HNC1SU0EtU0hBMjU2In1dLCJleHBpcmF0aW9uIjoiMjAyMC0wMS0yM1QwNDozNTo0MFoiLCJ4LWdvb2ctbWV0YSI6IlxcJHRlc3Qtb2JqZWN0LVx1MDBlOS1tZXRhZGF0YSJ9"
         },
         "expectedDecodedPolicy": "{\"conditions\":[{\"success_action_redirect\":\"http://www.google.com/\"},{\"key\":\"\\$test-object-\\u00E9\"},{\"x-goog-date\":\"20200123T043530Z\"},{\"x-goog-credential\":\"test-iam-credentials@dummy-project-id.iam.gserviceaccount.com/20200123/auto/storage/goog4_request\"},{\"x-goog-algorithm\":\"GOOG4-RSA-SHA256\"}],\"expiration\":\"2020-01-23T04:35:40Z\",\"x-goog-meta\":\"\\$test-object-\\u00E9-metadata\"}"
