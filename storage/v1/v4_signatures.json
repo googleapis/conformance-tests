@@ -284,6 +284,7 @@
       "policyOutput": {
         "url": "https://storage.googleapis.com/rsaposttest-1579902670-h3q7wvodjor6bc7y/",
         "fields": {
+          "bucket": "rsaposttest-1579902670-h3q7wvodjor6bc7y",
           "key": "test-object",
           "x-goog-algorithm": "GOOG4-RSA-SHA256",
           "x-goog-credential": "test-iam-credentials@dummy-project-id.iam.gserviceaccount.com/20200123/auto/storage/goog4_request",
@@ -307,6 +308,7 @@
       "policyOutput": {
         "url": "https://rsaposttest-1579902670-h3q7wvodjor6bc7y.storage.googleapis.com/",
         "fields": {
+          "bucket": "rsaposttest-1579902670-h3q7wvodjor6bc7y",
           "key": "test-object",
           "x-goog-algorithm": "GOOG4-RSA-SHA256",
           "x-goog-credential": "test-iam-credentials@dummy-project-id.iam.gserviceaccount.com/20200123/auto/storage/goog4_request",
@@ -331,6 +333,7 @@
       "policyOutput": {
         "url": "https://mydomain.tld/",
         "fields": {
+          "bucket": "rsaposttest-1579902670-h3q7wvodjor6bc7y",
           "key": "test-object",
           "x-goog-algorithm": "GOOG4-RSA-SHA256",
           "x-goog-credential": "test-iam-credentials@dummy-project-id.iam.gserviceaccount.com/20200123/auto/storage/goog4_request",
@@ -355,6 +358,7 @@
       "policyOutput": {
         "url": "http://mydomain.tld/",
         "fields": {
+          "bucket": "rsaposttest-1579902670-h3q7wvodjor6bc7y",
           "key": "test-object",
           "x-goog-algorithm": "GOOG4-RSA-SHA256",
           "x-goog-credential": "test-iam-credentials@dummy-project-id.iam.gserviceaccount.com/20200123/auto/storage/goog4_request",
@@ -383,6 +387,7 @@
       "policyOutput": {
         "url": "https://storage.googleapis.com/rsaposttest-1579902662-x2kd7kjwh2w5izcw/",
         "fields": {
+          "bucket": "rsaposttest-1579902662-x2kd7kjwh2w5izcw",
           "key": "test-object",
           "x-goog-algorithm": "GOOG4-RSA-SHA256",
           "x-goog-credential": "test-iam-credentials@dummy-project-id.iam.gserviceaccount.com/20200123/auto/storage/goog4_request",
@@ -411,6 +416,7 @@
       "policyOutput": {
         "url": "https://storage.googleapis.com/rsaposttest-1579902672-lpd47iogn6hx4sle/",
         "fields": {
+          "bucket": "rsaposttest-1579902672-lpd47iogn6hx4sle",
           "key": "test-object",
           "x-goog-algorithm": "GOOG4-RSA-SHA256",
           "x-goog-credential": "test-iam-credentials@dummy-project-id.iam.gserviceaccount.com/20200123/auto/storage/goog4_request",
@@ -437,6 +443,7 @@
       "policyOutput": {
         "url": "https://storage.googleapis.com/rsaposttest-1579902669-nwk5s7vvfjgdjs62/",
         "fields": {
+          "bucket": "rsaposttest-1579902669-nwk5s7vvfjgdjs62",
           "key": "test-object",
           "acl": "public-read",
           "cache-control": "public,max-age=86400",
@@ -464,6 +471,7 @@
       "policyOutput": {
         "url": "https://storage.googleapis.com/rsaposttest-1579902678-pt5yms55j47r6qy4/",
         "fields": {
+          "bucket": "rsaposttest-1579902678-pt5yms55j47r6qy4",
           "key": "test-object",
           "success_action_status": "200",
           "x-goog-algorithm": "GOOG4-RSA-SHA256",
@@ -490,6 +498,7 @@
       "policyOutput": {
         "url": "https://storage.googleapis.com/rsaposttest-1579902671-6ldm6caw4se52vrx/",
         "fields": {
+          "bucket": "rsaposttest-1579902671-6ldm6caw4se52vrx",
           "key": "test-object",
           "success_action_redirect": "http://www.google.com/",
           "x-goog-algorithm": "GOOG4-RSA-SHA256",
@@ -517,6 +526,7 @@
       "policyOutput": {
         "url": "https://storage.googleapis.com/rsaposttest-1579902671-6ldm6caw4se52vrx/",
         "fields": {
+          "bucket": "rsaposttest-1579902671-6ldm6caw4se52vrx",
           "key": "$test-object-é",
           "success_action_redirect": "http://www.google.com/",
           "x-goog-meta-custom-1": "$test-object-é-metadata",
