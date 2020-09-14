@@ -25,6 +25,7 @@ option java_multiple_files = true;
 message TestFile {
   repeated SigningV4Test signing_v4_tests = 1;
   repeated PostPolicyV4Test post_policy_v4_tests = 2;
+  repeated RetryStrategyTest retry_strategy_tests = 3;
 }
 
 enum UrlStyle {
@@ -82,4 +83,10 @@ message PostPolicyV4Test {
   string description = 1;
   PolicyInput policyInput = 2;
   PolicyOutput policyOutput = 3;
+}
+
+message RetryStrategyTest {
+  bool idempotent = 1;
+  string testbenchInstruction = 2;
+  bool expectedSuccess = 3;
 }

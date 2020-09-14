@@ -529,5 +529,37 @@
         "expectedDecodedPolicy": "{\"conditions\":[{\"success_action_redirect\":\"http://www.google.com/\"},{\"x-goog-meta-custom-1\":\"$test-object-\u00e9-metadata\"},{\"bucket\":\"rsaposttest-1579902671-6ldm6caw4se52vrx\"},{\"key\":\"$test-object-\u00e9\"},{\"x-goog-date\":\"20200123T043530Z\"},{\"x-goog-credential\":\"test-iam-credentials@dummy-project-id.iam.gserviceaccount.com/20200123/auto/storage/goog4_request\"},{\"x-goog-algorithm\":\"GOOG4-RSA-SHA256\"}],\"expiration\":\"2020-01-23T04:35:40Z\"}"
       }
     }
+  ],
+  "retryStrategyTests": [
+    {
+      "idempotent": true,
+      "testbenchInstruction": "retry-429",
+      "expectedSuccess": true
+    },
+    {
+      "idempotent": true,
+      "testbenchInstruction": "retry-500",
+      "expectedSuccess": true
+    },
+    {
+      "idempotent": true,
+      "testbenchInstruction": "retry-503",
+      "expectedSuccess": true
+    },
+    {
+      "idempotent": false,
+      "testbenchInstruction": "retry-429",
+      "expectedSuccess": false
+    },
+    {
+      "idempotent": false,
+      "testbenchInstruction": "retry-500",
+      "expectedSuccess": false
+    },
+    {
+      "idempotent": false,
+      "testbenchInstruction": "retry-503",
+      "expectedSuccess": false
+    }
   ]
 }
