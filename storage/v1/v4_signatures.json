@@ -547,6 +547,9 @@
       "policyOutput": {
         "url": "https://storage.googleapis.com/rsaposttest-1579902671-6ldm6caw4se52vrx/",
         "fields": {
+          "content-type": "text/plain",
+          "content-disposition": "attachment",
+          "content-encoding": "gzip",
           "key": "test-object",
           "success_action_redirect": "http://www.google.com/",
           "x-goog-algorithm": "GOOG4-RSA-SHA256",
