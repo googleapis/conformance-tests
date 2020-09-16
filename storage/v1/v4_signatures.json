@@ -547,10 +547,10 @@
       "policyOutput": {
         "url": "https://storage.googleapis.com/rsaposttest-1579902671-6ldm6caw4se52vrx/",
         "fields": {
+          "key": "test-object",
           "content-type": "text/plain",
           "content-disposition": "attachment; filename=\"~._-%=/é0Aa\"",
           "content-encoding": "gzip",
-          "key": "test-object",
           "success_action_redirect": "http://www.google.com/",
           "x-goog-algorithm": "GOOG4-RSA-SHA256",
           "x-goog-credential": "test-iam-credentials@dummy-project-id.iam.gserviceaccount.com/20200123/auto/storage/goog4_request",
