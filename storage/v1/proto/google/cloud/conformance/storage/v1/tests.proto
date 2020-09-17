@@ -82,7 +82,7 @@ message PolicyOutput {
   /*
     Expectations
 
-    E.1: PolicyInput.fields must be preppended to form expectedDecodedPolicy
+    E.1: PolicyInput.fields must be prepended to form expectedDecodedPolicy
     for consistent result across languages. Ordering doesn't matter to the
     service but the decision is made to make it easier to conform implementations
     in implementation.
@@ -106,7 +106,7 @@ message PolicyOutput {
 
     {
       "conditions":[
-        ...preppend here in the same order provided in PolicyInput.fields...
+        ...prepend here in the same order provided in PolicyInput.fields...
         {"bucket":"bucket-name"},
         {"key":"test-object"},
         {"x-goog-date":"20200123T043530Z"},
