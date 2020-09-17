@@ -88,6 +88,9 @@ message PolicyOutput {
     in implementation.
 
     Example:
+
+    # Step 1
+
     PolicyInput.fields has:
     {
       "content-disposition":"attachment; filename=\"~._-%=/é0Aa\"",
@@ -96,8 +99,28 @@ message PolicyOutput {
       "success_action_redirect":"http://www.google.com/"
     }
 
-    Then expectedDecodedPolicy should preppends PolicyInput.fields in
+    # Step 2
+
+    The expectedDecodedPolicy before prepending the PolicyInput.fields
+    would look like this:
+
+    {
+      "conditions":[
+        ...preppend here in the same order provided in PolicyInput.fields...
+        {"bucket":"bucket-name"},
+        {"key":"test-object"},
+        {"x-goog-date":"20200123T043530Z"},
+        {"x-goog-credential":"test-iam-credentials@dummy-project-id.iam.gserviceaccount.com/20200123/auto/storage/goog4_request"},
+        {"x-goog-algorithm":"GOOG4-RSA-SHA256"}
+      ],
+      "expiration":"2020-01-23T04:35:40Z"
+    }
+
+    # Step 3
+
+    Then expectedDecodedPolicy should prepends PolicyInput.fields in
     the same order to PolicyOutput.expectedDecodedPolicy `conditions` key.
+
     {
       "conditions":[
         {"content-disposition":"attachment; filename=\"~._-%=/é0Aa\""},
@@ -113,6 +136,7 @@ message PolicyOutput {
       "expiration":"2020-01-23T04:35:40Z"
     }
   */
+
   string expectedDecodedPolicy = 3;
 }
 
