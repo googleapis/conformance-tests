@@ -60,7 +60,11 @@ message PolicyConditions {
   repeated string startsWith = 2;
 }
 
+// Specification documentation is located at:
+// https://cloud.google.com/storage/docs/authentication/signatures
+
 message PolicyInput {
+  // http or https
   string scheme = 1;
   UrlStyle urlStyle = 2;
   string bucketBoundHostname = 3;
@@ -75,6 +79,40 @@ message PolicyInput {
 message PolicyOutput {
   string url = 1;
   map<string, string> fields = 2;
+  /*
+    Expectations
+
+    E.1: PolicyInput.fields must be preppended to form expectedDecodedPolicy
+    for consistent result across languages. Ordering doesn't matter to the
+    service but the decision is made to make it easier to conform implementations
+    in implementation.
+
+    Example:
+    PolicyInput.fields has:
+    {
+      "content-disposition":"attachment; filename=\"~._-%=/é0Aa\"",
+      "content-encoding":"gzip",
+      "content-type":"text/plain",
+      "success_action_redirect":"http://www.google.com/"
+    }
+
+    Then expectedDecodedPolicy should preppends PolicyInput.fields in
+    the same order to PolicyOutput.expectedDecodedPolicy `conditions` key.
+    {
+      "conditions":[
+        {"content-disposition":"attachment; filename=\"~._-%=/é0Aa\""},
+        {"content-encoding":"gzip"},
+        {"content-type":"text/plain"},
+        {"success_action_redirect":"http://www.google.com/"},
+        {"bucket":"bucket-name"},
+        {"key":"test-object"},
+        {"x-goog-date":"20200123T043530Z"},
+        {"x-goog-credential":"test-iam-credentials@dummy-project-id.iam.gserviceaccount.com/20200123/auto/storage/goog4_request"},
+        {"x-goog-algorithm":"GOOG4-RSA-SHA256"}
+      ],
+      "expiration":"2020-01-23T04:35:40Z"
+    }
+  */
   string expectedDecodedPolicy = 3;
 }
 
