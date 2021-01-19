@@ -2,7 +2,7 @@
   "tests": [
     {
       "description": "set: merge ArrayUnion field",
-      "comment": "An ArrayUnion value can occur at any depth. In this case,\nthe transform applies to the field path \"b.c\". Since \"c\" is removed from the update,\n\"b\" becomes empty, so it is also removed from the update.",
+      "comment": "An ArrayUnion value can occur at any depth. In this case,\nthe transform applies to the field path \"b.c\". \"a\" is left alone and remains in the object.",
       "set": {
         "option": {
           "all": true
