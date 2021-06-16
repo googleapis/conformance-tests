@@ -21,8 +21,8 @@ import (
 	"os"
 	"strings"
 
-	firestore_v1_tests "./generated/google/cloud/conformance/firestore/v1"
 	"github.com/golang/protobuf/jsonpb"
+	firestore_v1_tests "github.com/googleapis/conformance-tests/firestore/v1/generated/google/cloud/conformance/firestore/v1"
 )
 
 func main() {
