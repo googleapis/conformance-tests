@@ -17,12 +17,12 @@ package main
 import (
 	"bytes"
 	"io/ioutil"
-	"strings"
-	"os"
 	"log"
+	"os"
+	"strings"
 
 	"github.com/golang/protobuf/jsonpb"
-	storage_v1_tests "./generated/google/cloud/conformance/storage/v1"
+	storage_v1_tests "github.com/googleapis/conformance-tests/storage/v1/generated/google/cloud/conformance/storage/v1"
 )
 
 func main() {
@@ -36,7 +36,7 @@ func main() {
 
 	for _, f := range files {
 		if strings.Contains(f.Name(), "not-a-test.json") ||
-				!strings.Contains(f.Name(), ".json") {
+			!strings.Contains(f.Name(), ".json") {
 			continue
 		}
 

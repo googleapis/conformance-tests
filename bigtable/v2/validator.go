@@ -17,12 +17,12 @@ package main
 import (
 	"bytes"
 	"io/ioutil"
-	"strings"
-	"os"
 	"log"
+	"os"
+	"strings"
 
-	bigtable_v2_tests "./generated/google/cloud/conformance/bigtable/v2"
 	"github.com/golang/protobuf/jsonpb"
+	bigtable_v2_tests "github.com/googleapis/conformance-tests/bigtable/v2/generated/google/cloud/conformance/bigtable/v2"
 )
 
 func main() {
@@ -36,7 +36,7 @@ func main() {
 
 	for _, f := range files {
 		if strings.Contains(f.Name(), "not-a-test.json") ||
-				!strings.Contains(f.Name(), ".json") {
+			!strings.Contains(f.Name(), ".json") {
 			continue
 		}
 
