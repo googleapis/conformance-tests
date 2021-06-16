@@ -1,0 +1,24 @@
+{
+  "extends": [
+    "config:base",
+    "schedule:weekly"
+  ],
+  "semanticCommits": false,
+  "postUpdateOptions": [
+    "gomodTidy"
+  ],
+  "commitMessagePrefix": "chore(all): ",
+  "commitMessageAction": "update",
+  "groupName": "all",
+  "packageRules": [
+    {
+      "updateTypes": ["major"],
+      "enabled": false
+    }
+  ],
+  "force": {
+    "constraints": {
+      "go": "1.16"
+    }
+  }
+}
