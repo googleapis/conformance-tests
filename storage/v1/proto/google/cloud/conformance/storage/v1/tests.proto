@@ -21,6 +21,7 @@ import "google/protobuf/timestamp.proto";
 option csharp_namespace = "Google.Cloud.Storage.V1.Tests.Conformance";
 option java_package = "com.google.cloud.conformance.storage.v1";
 option java_multiple_files = true;
+option go_package = "google/cloud/conformance/storage/v1";
 
 message TestFile {
   repeated SigningV4Test signing_v4_tests = 1;
