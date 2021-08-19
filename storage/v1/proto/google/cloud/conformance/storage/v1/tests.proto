@@ -158,3 +158,59 @@ message PostPolicyV4Test {
   PolicyInput policyInput = 2;
   PolicyOutput policyOutput = 3;
 }
+
+/*
+ ------------------------------------------------------------------------------
+  Data types for retry conformance tests
+ ------------------------------------------------------------------------------
+*/
+
+message RetryTests {
+  repeated RetryTest retryTests = 1;
+}
+
+// A list of instructions to send as headers to the GCS emulator. Each
+// instruction will force a specified failure for that request.
+message InstructionList {
+  repeated string instructions = 1;
+} 
+
+// Test resources that are necessary for a method call. For example,
+// storage.objects.get would require BUCKET and OBJECT.
+enum Resource {
+  BUCKET = 0;
+  OBJECT = 1;
+  NOTIFICATION = 2;
+  HMAC_KEY = 3;
+}
+
+// A particular storage API method and required resources in order to test it.
+// Methods must be implemented in tests for each language.
+message Method {
+  string name = 1;  // e.g. storage.objects.get
+  repeated Resource resources = 2;
+}
+
+// Schema for a retry test, corresponding to a single scenario from the design
+// doc.
+message RetryTest {
+  // Scenario number
+  int32 id = 1;
+
+  // Human-readable description of the test case.
+  string description = 2;
+
+  // list of emulator instruction sets.
+  repeated InstructionList cases = 3;
+
+  // List of API methods to be tested.
+  repeated Method methods = 4;
+
+  // Whether a precondition is provided (for conditionally-idempotent methods
+  // only).
+  bool preconditionProvided = 5;
+
+  // Whether we expect the method calls to eventually succeed after the client
+  // library retries.
+  bool expectSuccess = 6;
+}

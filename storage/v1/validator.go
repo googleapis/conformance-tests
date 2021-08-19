@@ -16,6 +16,7 @@ package main
 
 import (
 	"bytes"
+	"github.com/golang/protobuf/proto"
 	"io/ioutil"
 	"log"
 	"os"
@@ -40,17 +41,26 @@ func main() {
 			continue
 		}
 
-		log.Printf("Validating: %v/%v", dir, f.Name())
-
-		inBytes, err := ioutil.ReadFile(dir + "/" + f.Name())
-		if err != nil {
-			log.Fatal(err)
+		filename := dir + "/" + f.Name()
+		if f.Name() == "v4_signatures.json" {
+			validateDataAgainstProtos(filename, &storage_v1_tests.TestFile{})
 		}
 
-		var testfile storage_v1_tests.TestFile
-
-		if err := jsonpb.Unmarshal(bytes.NewBuffer(inBytes), &testfile); err != nil {
-			log.Fatal(err)
+		if f.Name() == "retry_tests.json" {
+			validateDataAgainstProtos(filename, &storage_v1_tests.RetryTests{})
 		}
+	}
+}
+
+func validateDataAgainstProtos(filename string, protoType proto.Message) {
+	log.Printf("Validating: %v", filename)
+
+	inBytes, err := ioutil.ReadFile(filename)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	if err := jsonpb.Unmarshal(bytes.NewBuffer(inBytes), protoType); err != nil {
+		log.Fatal(err)
 	}
 }
