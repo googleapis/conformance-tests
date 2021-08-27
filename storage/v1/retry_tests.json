@@ -23,7 +23,7 @@
         {"name": "storage.buckets.insert",                "resources": []},
         {"name": "storage.buckets.list",                  "resources": ["BUCKET"]},
         {"name": "storage.buckets.lockRetentionPolicy",   "resources": ["BUCKET"]},
-        {"name": "storage.buckets.testIamPermission",     "resources": ["BUCKET"]},
+        {"name": "storage.buckets.testIamPermissions",     "resources": ["BUCKET"]},
         {"name": "storage.default_object_acl.get",        "resources": ["BUCKET"]},
         {"name": "storage.default_object_acl.list",       "resources": ["BUCKET"]},
         {"name": "storage.hmacKey.delete",                "resources": []},
