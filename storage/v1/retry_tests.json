@@ -28,7 +28,7 @@
         {"name": "storage.default_object_acl.list",       "resources": ["BUCKET"]},
         {"name": "storage.hmacKey.delete",                "resources": ["HMAC_KEY"]},
         {"name": "storage.hmacKey.get",                   "resources": ["HMAC_KEY"]},
-        {"name": "storage.hmacKey.list",                  "resources": []},
+        {"name": "storage.hmacKey.list",                  "resources": ["HMAC_KEY"]},
         {"name": "storage.notification.delete",           "resources": ["BUCKET", "NOTIFICATION"]},
         {"name": "storage.notification.get",              "resources": ["BUCKET", "NOTIFICATION"]},
         {"name": "storage.notification.list",             "resources": ["BUCKET", "NOTIFICATION"]},
