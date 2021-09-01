@@ -76,13 +76,10 @@
       "description": "conditionally_idempotent_no_retries_when_precondition_is_absent",
       "cases": [
         {
-          "instructions": ["return-503", "return-503"]
+          "instructions": ["return-503"]
         },
         {
-          "instructions": ["return-reset-connection", "return-reset-connection"]
-        },
-        {
-          "instructions": ["return-reset-connection", "return-503"]
+          "instructions": ["return-reset-connection"]
         }
       ],
       "methods": [
