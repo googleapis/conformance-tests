@@ -133,10 +133,10 @@
       "description": "non-retryable errors",
       "cases": [
         {
-          "instructions": ["return-400", "return-400"]
+          "instructions": ["return-400"]
         },
         {
-          "instructions": ["return-401", "return-401"]
+          "instructions": ["return-401"]
         }
       ],
       "methods": [
