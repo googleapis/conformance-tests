@@ -257,7 +257,7 @@
         }
       ],
       "methods": [
-        {"name": "storage.objects.get",                   "resources": ["BUCKET", "OBJECT"]},
+        {"name": "storage.objects.get",                   "resources": ["BUCKET", "OBJECT"]}
       ],
       "preconditionProvided": false,
       "expectSuccess": true
