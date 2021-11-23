@@ -19,8 +19,8 @@ set -x
 cd github/conformance-tests
 
 # Update kokoro job cert store
-sudo apt-get update
-sudo apt-get upgrade
+apt-get update
+apt-get upgrade
 
 # Prerequisites:
 # 1. golang compiler must be installed and in PATH.
