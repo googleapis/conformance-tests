@@ -23,9 +23,9 @@ cd github/conformance-tests
 # 2. protoc must be installed.
 
 # test go get
-go get -v github.com/elliotforbes/test-package
+go get -v -d  github.com/elliotforbes/test-package
 echo test exited: $?
-
+exit
 # Install protoc-gen-go.
 go get -d -u -v github.com/golang/protobuf/protoc-gen-go
 exit
