@@ -22,6 +22,10 @@ cd github/conformance-tests
 # 1. golang compiler must be installed and in PATH.
 # 2. protoc must be installed.
 
+# test go get
+go get -v github.com/elliotforbes/test-package
+echo test exited: $?
+
 # Install protoc-gen-go.
 go get -d -u -v github.com/golang/protobuf/protoc-gen-go
 exit
