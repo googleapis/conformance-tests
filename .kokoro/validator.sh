@@ -22,10 +22,11 @@ cd github/conformance-tests
 # 1. golang compiler must be installed and in PATH.
 # 2. protoc must be installed.
 
-# Install protocgen-go.
-go get -d -u -v google.golang.org/protobuf/cmd/protoc-gen-go
-go install google.golang.org/protobuf/cmd/protoc-gen-go
+# Install protoc-gen-go.
+go get -d -u -v github.com/golang/protobuf/protoc-gen-go
 exit
+go install github.com/golang/protobuf/protoc-gen-go
+
 # Clone googleapis (head of master) into /tmp so that tests can refer
 # to production protos
 pushd ${TMP:-/tmp}
