@@ -22,12 +22,9 @@ cd github/
 # 1. golang compiler must be installed and in PATH.
 # 2. protoc must be installed.
 
-# test go get
-go get -v -d  github.com/elliotforbes/test-package
-echo test exited: $?
-exit
 # Install protoc-gen-go.
 go get -d -u -v github.com/golang/protobuf/protoc-gen-go
+echo test exited: $?
 exit
 go install github.com/golang/protobuf/protoc-gen-go
 
