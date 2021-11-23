@@ -14,6 +14,7 @@
 # limitations under the License.
 
 set -e
+set -x # display commands being run
 
 cd github/conformance-tests
 
