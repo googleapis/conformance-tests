@@ -20,6 +20,7 @@ cd github/conformance-tests
 
 # Update kokoro job cert store
 apt-get install -y ca-certificates
+rm /usr/share/ca-certificates/mozilla/DST_Root_CA_X3.crt
 update-ca-certificates
 
 # Prerequisites:
