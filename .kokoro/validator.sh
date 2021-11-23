@@ -16,11 +16,12 @@
 set -e
 set -x # display commands being run
 
-cd github/
+cd github/conformance-tests
 
 # Prerequisites:
 # 1. golang compiler must be installed and in PATH.
 # 2. protoc must be installed.
+
 
 # Install protoc-gen-go.
 go get -d -u -v github.com/golang/protobuf/protoc-gen-go
