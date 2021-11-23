@@ -24,7 +24,7 @@ cd github/conformance-tests
 
 
 # Install protoc-gen-go.
-go get -d -u -v github.com/golang/protobuf/protoc-gen-go
+go get -d -v github.com/golang/protobuf/protoc-gen-go
 echo test exited: $?
 exit
 go install github.com/golang/protobuf/protoc-gen-go
