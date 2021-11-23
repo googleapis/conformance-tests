@@ -16,7 +16,7 @@
 set -e
 set -x # display commands being run
 
-cd github/conformance-tests
+cd github/
 
 # Prerequisites:
 # 1. golang compiler must be installed and in PATH.
