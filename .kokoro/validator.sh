@@ -14,6 +14,7 @@
 # limitations under the License.
 
 set -e
+set -x
 
 cd github/conformance-tests
 
@@ -22,8 +23,8 @@ cd github/conformance-tests
 # 2. protoc must be installed.
 
 # Install protoc-gen-go.
-go get -d -u github.com/golang/protobuf/protoc-gen-go
-go install github.com/golang/protobuf/protoc-gen-go
+go get -d -u -v google.golang.org/protobuf/cmd/protoc-gen-go
+go install google.golang.org/protobuf/cmd/protoc-gen-go
 
 # Clone googleapis (head of master) into /tmp so that tests can refer
 # to production protos
