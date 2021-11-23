@@ -242,7 +242,7 @@
     },
     {
       "id": 7,
-      "description": "resumabe_uploads_handle_complex_retries",
+      "description": "resumable_uploads_handle_complex_retries",
       "cases": [],
       "methods": [],
       "preconditionProvided": true,
