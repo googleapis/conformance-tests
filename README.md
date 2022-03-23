@@ -11,11 +11,11 @@ consuming the conformance tests, this can be minimized by each
 API abiding by the same conventions:
 
 - Each API's tests are entirely within a directory of the form
-`{api-name}/{api-version}`. Example: [storage/v1](https://github.com/googleapis/conformance-tests/blob/master/storage/v1)
+`{api-name}/{api-version}`. Example: [storage/v1](https://github.com/googleapis/conformance-tests/blob/main/storage/v1)
 - A .proto file specifies the format of the test cases. Example:
-[Firestore tests](https://github.com/googleapis/conformance-tests/blob/master/firestore/v1/proto/google/cloud/conformance/firestore/v1/tests.proto)
+[Firestore tests](https://github.com/googleapis/conformance-tests/blob/main/firestore/v1/proto/google/cloud/conformance/firestore/v1/tests.proto)
 - Test cases are specified as a set of inputs and expected outputs, and are
-defined in .json files. Example: [Firestore test case](https://github.com/googleapis/conformance-tests/blob/master/firestore/v1/testcase/create-nosplit.json)
+defined in .json files. Example: [Firestore test case](https://github.com/googleapis/conformance-tests/blob/main/firestore/v1/testcase/create-nosplit.json)
 
 ### Proto conventions
 
@@ -26,7 +26,7 @@ which should start with `google.cloud.conformance` and reflect the
 API name and version. For example, the Firestore v1 test protos are
 in the `google.cloud.conformance.firestore.v1` proto package, and
 are in a directory of
-[firestore/v1/proto/google/cloud/conformance/firestore/v1](https://github.com/googleapis/conformance-tests/tree/master/firestore/v1/proto/google/cloud/conformance/firestore/v1).
+[firestore/v1/proto/google/cloud/conformance/firestore/v1](https://github.com/googleapis/conformance-tests/tree/main/firestore/v1/proto/google/cloud/conformance/firestore/v1).
 
 Note: while the directory structure here ends up being very deep, it
 means we follow the proto convention, which makes importing protos
@@ -34,7 +34,7 @@ from each other simpler.
 
 The test protos may refer to protos within the production API. There
 is no versioning applied to these imports; it's assumed that it's
-always sufficient to take the head of the master branch in
+always sufficient to take the head of the main branch in
 https://github.com/googleapis/googleapis.
 
 Each API should have a `TestFile` message containing repeated fields
@@ -74,7 +74,7 @@ Each set of tests should come with a validator to ensure that the
 JSON files conform with the proto specification. The validator
 should be written in Go in the API-specific directory, in a file
 called `validator.go`. This should be invoked from the
-[.kokoro/validator.sh](https://github.com/googleapis/conformance-tests/tree/master/.kokoro/validator.sh)
+[.kokoro/validator.sh](https://github.com/googleapis/conformance-tests/tree/main/.kokoro/validator.sh)
 script which is executed as part of continuous integration.
 
 In most cases you don't need to know Go in order to write a
