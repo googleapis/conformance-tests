@@ -26,6 +26,10 @@ option go_package = "google/cloud/conformance/storage/v1";
 message TestFile {
   repeated SigningV4Test signing_v4_tests = 1;
   repeated PostPolicyV4Test post_policy_v4_tests = 2;
+  // Note: type is RetryTest rather than RetryTests.
+  // The data file can be loaded as either a TestFile or
+  // a RetryTests.
+  repeated RetryTest retry_tests = 3;
 }
 
 enum UrlStyle {
