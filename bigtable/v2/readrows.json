@@ -1660,6 +1660,40 @@
           "qualifier": "C"
         }
       ]
+    },
+    {
+      "description": "same qualifier in multiple families",
+      "chunks": [
+        {
+          "rowKey": "Uks=",
+          "familyName": "A",
+          "qualifier": "Qw==",
+          "timestampMicros": "100",
+          "value": "dmFsdWUtVkFM",
+          "commitRow": false
+        },
+        {
+          "familyName": "B",
+          "qualifier": "Qw==",
+          "value": "dmFsdWUtVkFMXzE=",
+          "commitRow": true
+        }
+      ],
+      "results": [
+        {
+          "rowKey": "RK",
+          "familyName": "A",
+          "qualifier": "C",
+          "timestampMicros": "100",
+          "value": "value-VAL"
+        },
+        {
+          "rowKey": "RK",
+          "familyName": "B",
+          "qualifier": "C",
+          "value": "value-VAL_1"
+        }
+      ]
     }
   ]
 }
