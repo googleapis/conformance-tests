@@ -5,3 +5,8 @@
 # https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners#codeowners-syntax
 
 *     @googleapis/cloud-storage-dpe @googleapis/api-firestore @googleapis/api-bigtable 
+
+# Default owners for each product subdirectory.
+/bigtable/                            @googleapis/api-bigtable
+/firestore/                           @googleapis/api-firestore
+/storage/                             @googleapis/cloud-storage-dpe
