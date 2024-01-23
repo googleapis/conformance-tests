@@ -1,12 +1,12 @@
 module github.com/googleapis/conformance-tests
 
-go 1.17
+go 1.21
 
 require (
 	github.com/golang/protobuf v1.5.3
-	google.golang.org/api v0.114.0
+	google.golang.org/api v0.157.0
 	google.golang.org/genproto cde4c949918d
-	google.golang.org/protobuf v1.30.0
+	google.golang.org/protobuf v1.32.0
 )
 
 require (
