@@ -18,12 +18,6 @@ set -x
 
 cd github/conformance-tests
 
-# Update certs store due to expired certificate
-# https://ubuntu.com/security/notices/USN-5089-2
-apt-get install -y ca-certificates
-rm /usr/share/ca-certificates/mozilla/DST_Root_CA_X3.crt
-update-ca-certificates
-
 # Prerequisites:
 # 1. golang compiler must be installed and in PATH.
 # 2. protoc must be installed.
