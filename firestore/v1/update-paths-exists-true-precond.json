@@ -1,8 +1,8 @@
 {
   "tests": [
     {
-      "description": "update-paths: Exists precondition is valid",
-      "comment": "The Update method supports an explicit exists precondition.",
+      "description": "update-paths: Exists=true precondition is valid",
+      "comment": "The Update method supports an explicit exists=true precondition.",
       "updatePaths": {
         "docRefPath": "projects/projectID/databases/(default)/documents/C/d",
         "precondition": {
