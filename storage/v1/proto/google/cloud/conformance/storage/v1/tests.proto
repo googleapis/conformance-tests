@@ -1,4 +1,4 @@
-// Copyright 2019, Google LLC
+// Copyright 2019 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -26,9 +26,6 @@ option go_package = "google/cloud/conformance/storage/v1";
 message TestFile {
   repeated SigningV4Test signing_v4_tests = 1;
   repeated PostPolicyV4Test post_policy_v4_tests = 2;
-  // Note: type is RetryTest rather than RetryTests.
-  // The data file can be loaded as either a TestFile or
-  // a RetryTests.
   repeated RetryTest retry_tests = 3;
 }
 
@@ -54,6 +51,10 @@ message SigningV4Test {
   string bucketBoundHostname = 13;
   string expectedCanonicalRequest = 14;
   string expectedStringToSign = 15;
+  string hostname = 16;
+  string clientEndpoint = 17;
+  string emulatorHostname = 18;
+  string universeDomain = 19;
 }
 
 message ConditionalMatches {
@@ -81,13 +82,10 @@ message PolicyInput {
     fields with strict equivalence which are added into
     PolicyOutput.expectedDecodedPolicy to generate the
     signature.
-
     Expectations
-
     E.1: Order them in lexigraphical order so it's the
     signature can be verified across different language
     implementations.
-
   */
   map<string, string> fields = 8;
   PolicyConditions conditions = 9;
@@ -98,16 +96,12 @@ message PolicyOutput {
   map<string, string> fields = 2;
   /*
     Expectations
-
     E.1: PolicyInput.fields must be prepended to form expectedDecodedPolicy
     for consistent result across languages. Ordering doesn't matter to the
     service but the decision is made to make it easier to conform implementations
     in implementation.
-
     Example:
-
     # Step 1
-
     PolicyInput.fields has:
     {
       "content-disposition":"attachment; filename=\"~._-%=/é0Aa\"",
@@ -115,12 +109,9 @@ message PolicyOutput {
       "content-type":"text/plain",
       "success_action_redirect":"http://www.google.com/"
     }
-
     # Step 2
-
     The expectedDecodedPolicy before prepending the PolicyInput.fields
     would look like this:
-
     {
       "conditions":[
         ...prepend here in the same order provided in PolicyInput.fields...
@@ -132,12 +123,9 @@ message PolicyOutput {
       ],
       "expiration":"2020-01-23T04:35:40Z"
     }
-
     # Step 3
-
     Then expectedDecodedPolicy should prepends PolicyInput.fields in
     the same order to PolicyOutput.expectedDecodedPolicy `conditions` key.
-
     {
       "conditions":[
         {"content-disposition":"attachment; filename=\"~._-%=/é0Aa\""},
