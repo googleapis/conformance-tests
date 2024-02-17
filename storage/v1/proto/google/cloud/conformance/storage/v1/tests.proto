@@ -1,4 +1,4 @@
-// Copyright 2019, Google LLC
+// Copyright 2019 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -54,6 +54,10 @@ message SigningV4Test {
   string bucketBoundHostname = 13;
   string expectedCanonicalRequest = 14;
   string expectedStringToSign = 15;
+  string hostname = 16;
+  string clientEndpoint = 17;
+  string emulatorHostname = 18;
+  string universeDomain = 19;
 }
 
 message ConditionalMatches {
