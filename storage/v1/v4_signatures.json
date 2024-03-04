@@ -374,7 +374,7 @@
       "expectedUrl": "https://xyz.googleapis.com/test-bucket/test-object?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=test-iam-credentials%40dummy-project-id.iam.gserviceaccount.com%2F20190201%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20190201T090000Z&X-Goog-Expires=10&X-Goog-SignedHeaders=host&X-Goog-Signature=53b20003ff2c552b3194a6bccc25024663662392554b3334e989e2704f3a0308455eaacf45c335a78c0186a5cf8eef78bf5781a7267465d28a35c9e1291f87ff340e9ee40b3b9bdce70561bf000887ce38ccd7d2445a8749453960a8f11d37576dfd5942f92d6f4527bbeffb90526b5de9653b6ca16136e9f19bcb65d984ddaf22c4ade45d6a168bb4752a43de33ab121206f50d994612824407711bff720cb1b207b61b613c44c85d3ce16dc4fc6eba24e494e176b0780d0ab85a800b13fcbf31434ddf51992efae1efde330ebda0617d1c20078ef22a4f10a7bcbed961237442d9a8db78d7aeb777a4994b50efdd41e07c4966e912a30f92a7426f207e9545",
       "emulatorHostname": "http://localhost:9000",
       "clientEndpoint": "http://localhost:8080",
-      "hostname": "https://xyz.googleapis.com",
+      "hostname": "xyz.googleapis.com",
       "expectedCanonicalRequest": "GET\n/test-bucket/test-object\nX-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=test-iam-credentials%40dummy-project-id.iam.gserviceaccount.com%2F20190201%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20190201T090000Z&X-Goog-Expires=10&X-Goog-SignedHeaders=host\nhost:xyz.googleapis.com\n\nhost\nUNSIGNED-PAYLOAD",
       "expectedStringToSign": "GOOG4-RSA-SHA256\n20190201T090000Z\n20190201/auto/storage/goog4_request\n4f6f519cc03e25d19fcd476d7a45bffcccdba33d10e00214a0f2debc204e2386"
     },
