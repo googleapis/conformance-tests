@@ -4,9 +4,9 @@ go 1.21
 
 require (
 	github.com/golang/protobuf v1.5.4
-	google.golang.org/api v0.169.0
+	google.golang.org/api v0.180.0
 	google.golang.org/genproto cde4c949918d
-	google.golang.org/protobuf v1.33.0
+	google.golang.org/protobuf v1.34.1
 )
 
 require (
