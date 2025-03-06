@@ -9,4 +9,4 @@
 # Default owners for each product subdirectory.
 /bigtable/                            @googleapis/api-bigtable
 /firestore/                           @googleapis/api-firestore
-/storage/                             @googleapis/cloud-storage-dpe
+/storage/                             @googleapis/gcs-sdk-team
