@@ -3,10 +3,10 @@ module github.com/googleapis/conformance-tests
 go 1.25.0
 
 require (
-	cloud.google.com/go/bigtable v1.33.0
-	cloud.google.com/go/firestore v1.16.0
+	cloud.google.com/go/bigtable v1.58.0
+	cloud.google.com/go/firestore v1.29.2
 	github.com/golang/protobuf v1.5.4
-	google.golang.org/protobuf v1.36.11
+	google.golang.org/protobuf v1.36.12
 )
 
 require (
